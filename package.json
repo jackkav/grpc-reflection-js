@@ -35,17 +35,17 @@
     "typescript": "^3.9.5"
   },
   "scripts": {
-    "check": "gts check",
-    "clean": "gts clean",
+    "check": "npx gts check",
+    "clean": "npx gts clean",
     "compile": "tsc",
-    "fix": "gts fix",
-    "test": "nyc mocha -r ts-node/register test/**/*.test.ts",
-    "report": "nyc report --reporter=json",
-    "prepare": "yarn run compile",
-    "pretest": "yarn run compile && yarn run fix",
-    "posttest": "yarn run check",
+    "fix": "npx gts fix",
+    "test": "npx nyc mocha -r ts-node/register test/**/*.test.ts",
+    "report": "npx nyc report --reporter=json",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile && npm run fix",
+    "posttest": "npm run check",
     "protoc": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./src --grpc_out=grpc_js:./src --ts_out=grpc_js:./src --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts -I ./static/grpc/reflection/v1alpha reflection.proto",
-    "build": "yarn run compile && yarn run fix && yarn run check"
+    "build": "npm run compile && npm run fix && npm run check"
   },
   "files": [
     "build",
